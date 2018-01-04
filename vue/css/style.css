@@ -1,0 +1,152 @@
+#all:before{
+	content:"";
+	display: table;
+}
+
+#all:after{
+	clear:both;
+}
+
+a{
+	text-decoration: none;
+}
+
+header{
+	background-color: rgba(0, 0, 0, 0.8);
+	float: left;
+	position: fixed;
+}
+
+header nav{
+	float: right;
+	list-style: none;
+	display: block;
+	padding-top: 25px;
+	padding-bottom: 25px;
+
+}
+
+header nav li{
+	display: inline-block;
+	padding: 0px 25px;
+}
+
+header nav li a{
+	color: white;
+}
+
+header nav li a:hover{
+	text-decoration: none;
+	color: green;
+}
+
+.left{
+	float: left;
+	text-align: left;
+}
+
+.right{
+	float: right;
+	text-align: right;
+}
+
+#logo{
+	float: left;
+	background: url(../img/bg.png) center bottom no-repeat;
+	height: 500px;
+	width: 100%;
+	margin-bottom: 50px; 
+}
+
+#logo img{
+	width: 280px;
+	height: 230px;
+	float: left;
+	background-color: rgba(255, 255, 255, 0.4);
+	margin-top: 50px;
+}
+
+#how{
+	float: left;
+	text-align: center;
+}
+
+h2.col-lg-5{
+	background-color: red;
+	padding: 15px;
+	margin: auto;
+	color: white;
+}
+
+footer{
+	background-color: rgba(0, 0, 0, 0.8);
+	float: left;
+	color: white;
+	text-align: center;
+}
+
+footer p{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+footer p a{
+	color: white;
+}
+
+footer p a:hover{
+	color: green;
+	text-decoration: none;
+}
+
+section{
+	float: left;
+	text-align: center;
+}
+
+.box{
+	margin: auto;
+}
+
+.box button{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	background-color: white;
+	border: 2px solid green;
+	border-radius: 10px;
+	color: green;
+}
+
+.box button:hover{
+	background-color: green;
+	border: 2px solid white;
+	color: white;
+}
+
+#why p{
+	text-align: left;
+	margin-top: 15px;
+}
+
+#contact p{
+	margin-top: 15px;
+}
+
+form input{
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+#contact h2.col-lg-5{
+	margin-top: 15px;
+}
+
+#contact button,
+#suscription button,
+#connexion button{
+	margin-left: 25%;
+}
+
+.top{
+	margin-top: 15px;
+}
