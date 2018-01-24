@@ -1,5 +1,6 @@
 <?php
 session_start();
+include ("C:\wamp64\www\Gaspillage\controller\controleur.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,9 +32,9 @@ session_start();
 		</div>
 	</section>
 	<section id="suscription" class="col-lg-12">
-		<form method="post" onsubmit="return verifSuscriptionAsso(this);">
+		<form method="post" onsubmit="return verifSuscriptionAsso(this);" action="">
 				<input name="assoName" type="text" id="assoName" placeholder="Nom de l'Association" class="col-lg-4"></input><br />
-				<input name="assoNumber" type="text" id="assoNumber" placeholder="Le numéro d'association" onchange="isAssoNumber();" class="col-lg-4"></input><br />
+				<input name="assoNumber" type="text" id="assoNumber" placeholder="Le numéro d'association (14 chiffres)" onchange="isAssoNumber();" class="col-lg-4"></input><br />
               	<input name="contactName" type="text" id="contactName" placeholder="Nom du Contact" onchange="allUpperCase();" class="col-lg-4"></input><br />
               	<input name="contactFirstName" type="text" id="contactFirstName" placeholder="Prénom du Contact" onchange="firstUpperCase(this);" class="col-lg-4"></input><br />
               	<input name="email" type="text" id="email" placeholder="Email" onchange="isEmail(this);" class="col-lg-4"></input><br />
@@ -41,10 +42,40 @@ session_start();
               	<input name="login" type="text" id="login" placeholder="Identifiant" onchange="isLogin(this);" class="col-lg-4"></input><br />
               	<input name="password" type="text" id="password" placeholder="Mot de passe" class="col-lg-4"></input><br />
               	<input name="rePassword" type="text" id="rePassword" placeholder="Valider votre mot de passe" class="col-lg-4"></input><br />
-              </form>
-               <div class="box">
-              	<button type="submit" onclick="cookieAsso();"><strong>ENVOYER</strong></button>
-              </div>
+              	<div class="box">
+              	<button type="submit" onclick="cookieAsso();" name="valider" value="valider"><strong>ENVOYER</strong></button>
+              	</div>
+        </form>
+           <?php      
+              if (isset($_POST['valider'])){
+	$unControleur = new Controleur("localhost","gaspillage","root","");
+					$unControleur->setTable("association");
+					$tabAsso = array (
+						"email"=>$_POST['email'],
+						"nomAsso"=>$_POST['assoName'],
+						"siretAsso"=>$_POST['assoNumber'],
+						"telephone"=>$_POST['phone']
+					);
+					$unControleur->insert ($tabAsso);
+
+					
+					$controleurDeux = new Controleur("localhost","gaspillage","root","");
+					$controleurDeux->setTable("contactAsso");
+					$tabContact = array (
+						"email"=>$_POST['email'],
+						"identifiant"=>$_POST['login'],
+						"mdp"=>$_POST['password'],
+						"nomcontact"=>$_POST['contactName'],
+						"prenomContact"=>$_POST['contactFirstName'],
+						"telephone"=>$_POST['phone']
+					);
+					$controleurDeux->insert ($tabContact);
+				}
+
+				?>	
+
+
+              
 	</section>
 	<footer class="col-lg-12">
 		<p>Copyright | <a href="">Mentions légales</a></p>

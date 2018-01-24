@@ -1,5 +1,6 @@
 <?php
 session_start();
+include ("C:\wamp64\www\Gaspillage\controller\controleur.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,10 +38,29 @@ session_start();
 		<form method="post">
 			<p>Date de début de l'offre <input name="DateDebutOffre" type="date" id="DateDebutOffre" class="top col-lg-4"></input></p>
 			<p>Date de fin de l'offre <input name="DateFinOffre" type="date" id="DateFinOffre" class="col-lg-4"></input></p>
+			<p>libeleOffre<input type="text" name="libeleOffre" class="col-lg-4"></input></p>
+			<p>nombreProduit<input type="" name="nombreProduit" class="col-lg-4"></input></p>
+			<p>prixOffre<input type="" name="prixOffre" class="col-lg-4"></input></p>
+			<p>titreOffre<input type="text" name="titreOffre" class="col-lg-4"></input></p>
+			<div class="box">
+              	<button id="envoyer" name="envoyer" type="submit"><strong>ENVOYER</strong></button>
+            </div>
         </form>
-               <div class="box">
-              	<button type="submit"><strong>ENVOYER</strong></button>
-              </div>
+
+          <?php      
+              if (isset($_POST['envoyer'])){
+					$uneOffre = new Controleur("localhost","gaspillage","root","");
+					$uneOffre->setTable("offre");
+					$tabOffre = array (
+						"email"=>$_POST['email'],
+						"nomAsso"=>$_POST['assoName'],
+						"siretAsso"=>$_POST['assoNumber'],
+						"telephone"=>$_POST['phone']
+					);
+					$uneOffre->insert ($tabAsso);
+
+					?>
+
 	</section>
 	<footer class="col-lg-12">
 		<p>Copyright | <a href="">Mentions légales</a></p>

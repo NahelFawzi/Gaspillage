@@ -224,22 +224,19 @@
 			}
 		}
 
-		public function connexionUser($login,$mdp)
+		/**public function connexionUser($login,$mdp)
 		
 		{
-
 	            $requete = "select idContact from ".$this->table." where identifiant =:".$login." AND password = :".$mdp;
 	            echo $requete;
 
-	            if($this->pdo != null)
-	            {
-
-	                $selectWhere = $this->pdo->prepare($requete);
-	                $selectWhere->execute($donnees);
-	                $resultats = $selectWhere->fetch();
+	     
+	   	        $connexionUser = $this->pdo->prepare($requete);
+	                $connexionUser->execute($donnees);
+	                $resultats = $connexionUser->fetch();
 	                return $resultats;
 		            
-	            }
+	            
 		            
 	            else
 	            {
@@ -250,7 +247,7 @@
 
 
 		}
-
+		**/
 
 
 

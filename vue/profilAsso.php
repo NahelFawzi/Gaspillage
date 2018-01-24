@@ -29,6 +29,32 @@ session_start();
 			<img src="img/logo/logo.png" class="img-responsive">
 		</div>
 	</section>
+		
+	<center>
+			<table class="table" border='1px'>
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">Profil Utilisateur</td>
+						<th scope="col">Identifiants</td>
+						<th scope="col">Telephone</td>
+						<th scope="col">Emails</td>
+						<th scope="col">Nom contact</td>
+						<th scope="col">Prenom Contact</td>
+					</th>
+					<tr>
+						<td>#</td>
+						<td>nfawzi</td>
+						<td>0123456789</td>
+						<td>nfawzi@nfawzi.com</td>
+						<td>FAWZI</td>
+						<td>Nahel</td>
+					</tr>
+				</thead>	
+			</table>
+			</br>
+			</br>
+	</center>		
+			
 	<footer class="col-lg-12">
 		<p>Copyright | <a href="">Mentions légales</a></p>
 	</footer>

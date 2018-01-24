@@ -37,7 +37,7 @@ session_start();
               <form method="post">
               	<input name="Identifiant" type="text" id="identifiant" placeholder="Identifiant" class="col-lg-4"></input><br />
               	<input name="Password" type="text" id="password" placeholder="Mot de passe" class="col-lg-4"></input><br />
-              	<textarea class="col-lg-4" placeholder="Méssage..."></textarea><br />
+              	<textarea class="col-lg-4" placeholder="Message..."></textarea><br />
               </form>
               <div class="box">
               	<button type="submit"><strong>ENVOYER</strong></button>

@@ -33,7 +33,7 @@ session_start();
 	<section id="buttons" class="col-lg-12">
 		<div class="container">
 			<div class="box">
-				<a href="connexion.php"><button><strong>CONNEXION</strong></button></a>
+				<a href="connexionEns.php"><button><strong>CONNEXION</strong></button></a>
 				<a href="suscriptionEns.php"><button><strong>INSCRIPTION</strong></button></a>
 			</div>
 		</div>
