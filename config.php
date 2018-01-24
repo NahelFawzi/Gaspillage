@@ -1,5 +1,6 @@
 <?php 
 
-$unControleur = new Controleur("localhost","SNCF","root","");
+$unControleur = new Controleur("localhost","gaspillage","root","");
+$controleurDeux = new Controleur("localhost","gaspillage","root","");
 
  ?>
